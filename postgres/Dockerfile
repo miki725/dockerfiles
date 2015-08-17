@@ -1,8 +1,5 @@
-#
-# based on https://github.com/wyaeld/dockerfiles/blob/master/postgres/9.3/Dockerfile
-#
-
 FROM ubuntu:14.04
+MAINTAINER "Miroslav Shubernetskiy"
 
 ENV POSTGRES_VERSION 9.4
 ENV PGDATA /var/lib/postgresql/data
