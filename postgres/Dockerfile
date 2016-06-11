@@ -1,7 +1,8 @@
-FROM ubuntu:14.04
+FROM ubuntu:16.04
 MAINTAINER "Miroslav Shubernetskiy"
 
-ENV POSTGRES_VERSION 9.4
+ENV POSTGRES_VERSION 9.5
+ENV GOSU_VERSION 1.9
 ENV PGDATA /var/lib/postgresql/data
 ENV PATH $PATH:/usr/lib/postgresql/$POSTGRES_VERSION/bin
 
@@ -30,7 +31,7 @@ RUN apt-get clean && \
     rm -rf /var/cache/apt
 
 # install gosu
-RUN curl -o /usr/local/bin/gosu -sSL "https://github.com/tianon/gosu/releases/download/1.4/gosu-$(dpkg --print-architecture)" \
+RUN curl -o /usr/local/bin/gosu -sSL "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture)" \
     && chmod +x /usr/local/bin/gosu
 
 ADD entrypoint.sh /usr/local/bin/entrypoint.sh
