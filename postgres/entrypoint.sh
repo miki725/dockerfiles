@@ -7,7 +7,7 @@ STDERR () {
 
 if [ "$1" = 'postgres' ]; then
     # exit if postgres directory does not already exist
-    [ -d "$PGDATA" ] || (echo "PGDATA=$PGDATA does not exist" | STDERR && exit 1)
+    [ -d "$PGDATA" ] || (echo "PGDATA=$PGDATA does not exist but we are creating it" | STDERR && mkdir -p $PGDATA)
 
     chown -R postgres "$PGDATA"
 

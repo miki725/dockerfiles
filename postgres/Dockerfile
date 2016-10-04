@@ -1,8 +1,8 @@
 FROM ubuntu:16.04
 MAINTAINER "Miroslav Shubernetskiy"
 
-ENV POSTGRES_VERSION 9.5
-ENV GOSU_VERSION 1.9
+ENV POSTGRES_VERSION 9.6
+ENV GOSU_VERSION 1.10
 ENV PGDATA /var/lib/postgresql/data
 ENV PATH $PATH:/usr/lib/postgresql/$POSTGRES_VERSION/bin
 
