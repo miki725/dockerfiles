@@ -1,12 +1,14 @@
-FROM alpine
+FROM python:3.7-slim
 
-RUN apk add --no-cache \
-        bash \
-        gcc \
+RUN apt-get update \
+    && \
+    apt-get install -y \
         git \
-        nodejs-current \
-        npm \
-        python3 \
+        gcc \
+    && \
+    apt-get clean \
+    && \
+    rm -rf /var/lib/apt/lists/* \
     && \
     python3 -m pip install --no-cache-dir \
         pre-commit
