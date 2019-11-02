@@ -1,11 +1,13 @@
 FROM alpine
 
 RUN apk add --no-cache \
-        python3 \
+        bash \
+        gcc \
+        git \
         nodejs-current \
         npm \
-        bash \
-        git && \
+        python3 \
+    && \
     python3 -m pip install --no-cache-dir \
         pre-commit
 
